@@ -1,0 +1,27 @@
+﻿<Window x:Class="MeadMate.Views.NewMeadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeadMate.Views"
+        mc:Ignorable="d"
+        Title="NewMeadWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Name:"
+                   Style="{StaticResource InputTextBlock}"/>
+            <TextBox x:Name="MeadName"/>
+            <TextBlock Text="Recipe:"
+                   Style="{StaticResource InputTextBlock}"/>
+            <TextBox x:Name="MeadRecipe"
+                     Height="200"/>
+            <Button x:Name="SaveBtn"
+                    Content="Save"
+                    Style="{StaticResource SaveButton}"/>
+            <Button x:Name="CancelBtn"
+                    Content="Cancel"
+                    Style="{StaticResource CancelButton}"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
