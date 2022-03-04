@@ -11,7 +11,13 @@ namespace MeadMate.Models {
         public int Id { get; set; }
         public string Name { get; set; }
         public List<MeadAction> Actions { get; set; }
+        public int quantityML => GetQuantity();
 
+        private int GetQuantity() {
+            foreach(MeadAction action in Actions) {
+
+            }
+        }
 
         internal static List<Mead> GetActiveBrews() {
             return MockMeadList();

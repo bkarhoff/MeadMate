@@ -17,11 +17,16 @@ namespace MeadMate.Views {
     /// Interaction logic for MeadWindow.xaml
     /// </summary>
     public partial class MeadWindow : Window {
-        public MeadViewModel VM;
+        private MeadViewModel VM;
         public MeadWindow() {
             InitializeComponent();
             VM = new MeadViewModel();
-            BrewingList.DataContext = VM;
+            MainContent.DataContext = VM;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            InvalidateVisual();
+            MessageBox.Show("Hello");
         }
     }
 }

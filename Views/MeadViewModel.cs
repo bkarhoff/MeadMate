@@ -10,14 +10,20 @@ namespace MeadMate.Views {
     public class MeadViewModel : INotifyPropertyChanged {
         public MeadViewModel() {
             ActiveMeads = Mead.GetActiveBrews();
-            OnPropertyChanged("ActiveMeads");
         }
 
-        private void OnPropertyChanged(string propertyName) {
+        private void OnPropertyChanged(string propertyName = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public List<Mead> ActiveMeads;
+        private List<Mead> meads;
+        public List<Mead> ActiveMeads {
+            get { return meads; }
+            set {
+                meads = value;
+                OnPropertyChanged("ActiveMeads");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
