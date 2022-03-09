@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace MeadMate.Views {
     public class MeadViewModel : INotifyPropertyChanged {
+        private MeadDB dbContext = new MeadDB();
         public MeadViewModel() {
-            ActiveMeads = Mead.GetActiveBrews();
+            ActiveMeads = dbContext.GetActiveBrews();
         }
 
         private void OnPropertyChanged(string propertyName = null) {

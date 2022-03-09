@@ -33,10 +33,50 @@
                       ItemsSource="{Binding ActiveMeads}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate >
-                    <TextBlock Text="{Binding Name}"
-                               Background="AliceBlue"
-                               TextAlignment="Center"
-                               Margin="10 10 10 5"/>
+                    <Grid Background="LightGray"
+                          Margin="5 5 5 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock 
+                            Text="{Binding Name}"
+                            Background="AliceBlue"
+                            TextAlignment="Center"
+                            Margin="10 10 10 5"
+                            Grid.Column="0"
+                            Grid.Row="0"/>
+                        
+                        <DockPanel 
+                            Width="50"        
+                            Margin="10 10 10 5"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            HorizontalAlignment="Center">
+                            <TextBlock 
+                                Text="{Binding ABV}"
+                                DockPanel.Dock="sa"
+                                Background="AliceBlue"
+                                TextAlignment="Right"/>
+                            <TextBlock 
+                                Text=" %"
+                                DockPanel.Dock="Left"
+                                Background="AliceBlue"
+                                TextAlignment="Left"/>
+                        </DockPanel>
+                        
+                        <TextBlock 
+                            Text="{Binding LastAction.Name}"
+                            Background="AliceBlue"
+                            TextAlignment="Center"
+                            Margin="10 10 10 5"
+                            Grid.Column="1"
+                            Grid.Row="0" Grid.RowSpan="2"/>
+                    </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
